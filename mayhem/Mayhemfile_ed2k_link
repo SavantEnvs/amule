@@ -1,0 +1,11 @@
+project: savantenvs/amule
+target: ed2k_link
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ed2k_link/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_ed2k_link
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/ed2k_link/ed2k_link.dict
+    env:
+      wx_exit_on_assert: '1'

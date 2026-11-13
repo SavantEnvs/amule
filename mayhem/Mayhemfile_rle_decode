@@ -1,0 +1,11 @@
+project: savantenvs/amule
+target: rle_decode
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/rle_decode/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_rle_decode
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/rle_decode/rle_decode.dict
+    env:
+      wx_exit_on_assert: '1'

@@ -1,0 +1,11 @@
+project: savantenvs/amule
+target: tag_stream
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/tag_stream/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_tag_stream
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/tag_stream/tag_stream.dict
+    env:
+      wx_exit_on_assert: '1'

@@ -1,0 +1,11 @@
+project: savantenvs/amule
+target: ec_packet
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ec_packet/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_ec_packet
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/ec_packet/ec_packet.dict
+    env:
+      wx_exit_on_assert: '1'

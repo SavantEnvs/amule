@@ -1,0 +1,1 @@
+ed2k://|file|a.bin|1024|0123456789ABCDEF0123456789ABCDEF|/|sources,1.2.3.4:4662|/

@@ -1,0 +1,11 @@
+project: savantenvs/amule
+target: magnet_uri
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/magnet_uri/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_magnet_uri
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/magnet_uri/magnet_uri.dict
+    env:
+      wx_exit_on_assert: '1'
